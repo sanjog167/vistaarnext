@@ -1,0 +1,126 @@
+@tailwind base;
+
+@layer base {
+  html {
+    @apply text-[#333333];
+  }
+
+  .link {
+    @apply text-primary;
+    @apply font-bold;
+  }
+
+  .btn {
+    @apply bg-primary;
+    @apply px-4;
+    @apply py-2;
+    @apply rounded-3xl;
+    @apply text-white;
+    @apply font-bold uppercase;
+  }
+
+  .input-box {
+    @apply border-2;
+    @apply border-solid;
+    @apply border-gray-200;
+    @apply px-6;
+    @apply py-3;
+    @apply outline-none;
+  }
+
+  .multiline-ellipsis {
+    width: 100%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .guarantee {
+    font-weight: 700;
+    background: linear-gradient(90deg, #00917c 10%, #e2e2e2 50%, #fc8105 60%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: textclip 3.5s linear infinite;
+    animation: textclip 3.5s linear infinite;
+  }
+
+  @-webkit-keyframes textclip {
+    to {
+      background-position: 200%;
+    }
+  }
+
+  @keyframes textclip {
+    to {
+      background-position: 200%;
+    }
+  }
+
+  .checkbox {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+  }
+
+  .checkbox:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+
+  .checkbox input:checked ~ .checkmark {
+    background-color: #00917c;
+  }
+
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .checkbox input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .checkbox .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
